@@ -1,12 +1,14 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main(){
 	int m,n,x;
 	cin >> m >> n >> x;
-	if(x >= m)
-		cout << n+2*(m/n) << endl;
-	else
-		cout << n+(m/n) << endl;
+	while(m <= n*x && m >= n && x > 0){	
+		x-=ceil(double(m)/n); 
+		n+=(m/n);
+	}
+	cout << n << endl;
 	return 0;
 }
